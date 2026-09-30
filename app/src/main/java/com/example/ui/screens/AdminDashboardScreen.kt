@@ -31,6 +31,7 @@ import com.example.ui.components.openWhatsApp
 import com.example.ui.theme.*
 import com.example.viewmodel.AdminTab
 import com.example.viewmodel.PortfolioViewModel
+import com.example.viewmodel.Screen
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
@@ -50,6 +51,7 @@ fun AdminDashboardScreen(
             pinError = pinError,
             onPinChange = { viewModel.updateAdminPinInput(it) },
             onAuthenticate = { viewModel.authenticateAdmin() },
+            onCancel = { viewModel.navigateTo(Screen.HOME) },
             modifier = modifier
         )
     } else {
@@ -63,6 +65,7 @@ fun AdminLoginGate(
     pinError: String?,
     onPinChange: (String) -> Unit,
     onAuthenticate: () -> Unit,
+    onCancel: () -> Unit = {},
     modifier: Modifier = Modifier
 ) {
     Box(
@@ -135,8 +138,8 @@ fun AdminLoginGate(
                 OutlinedTextField(
                     value = pinInput,
                     onValueChange = onPinChange,
-                    label = { Text("Admin PIN") },
-                    placeholder = { Text("Default: 1055") },
+                    label = { Text("Security PIN") },
+                    placeholder = { Text("••••") },
                     visualTransformation = PasswordVisualTransformation(),
                     keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.NumberPassword),
                     singleLine = true,
@@ -159,12 +162,25 @@ fun AdminLoginGate(
                     )
                 }
 
-                Spacer(modifier = Modifier.height(10.dp))
+                Spacer(modifier = Modifier.height(8.dp))
+
+                TextButton(
+                    onClick = onCancel,
+                    modifier = Modifier.fillMaxWidth()
+                ) {
+                    Text(
+                        "Return to Portfolio",
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                        fontSize = 13.sp
+                    )
+                }
+
+                Spacer(modifier = Modifier.height(4.dp))
 
                 Text(
-                    text = "Tip: Default PIN is 1055 (changeable in settings)",
+                    text = "Restricted Owner Access",
                     style = MaterialTheme.typography.labelSmall.copy(
-                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.6f),
                         fontSize = 11.sp
                     )
                 )

@@ -13,6 +13,7 @@ import androidx.compose.animation.fadeOut
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
@@ -105,7 +106,16 @@ fun MainPortfolioApp(
         topBar = {
             TopAppBar(
                 title = {
-                    Row(verticalAlignment = Alignment.CenterVertically) {
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                        modifier = Modifier
+                            .clip(RoundedCornerShape(8.dp))
+                            .clickable {
+                                // Owner secret shortcut: tapping your profile header opens the secure Admin Dashboard
+                                viewModel.navigateTo(Screen.ADMIN)
+                            }
+                            .padding(horizontal = 4.dp, vertical = 2.dp)
+                    ) {
                         Box(
                             modifier = Modifier
                                 .size(36.dp)
@@ -121,7 +131,7 @@ fun MainPortfolioApp(
                                     .error(R.drawable.talha_avatar)
                                     .placeholder(R.drawable.talha_avatar)
                                     .build(),
-                                contentDescription = "Logo",
+                                contentDescription = "Talha Mahmood",
                                 contentScale = ContentScale.Crop,
                                 modifier = Modifier
                                     .size(34.dp)
@@ -219,17 +229,6 @@ fun MainPortfolioApp(
                     onClick = { viewModel.navigateTo(Screen.CONTACT) },
                     icon = { Icon(Icons.Default.Send, contentDescription = "Contact") },
                     label = { Text("Contact") },
-                    colors = NavigationBarItemDefaults.colors(
-                        indicatorColor = CyanPrimary.copy(alpha = 0.2f),
-                        selectedIconColor = CyanPrimary
-                    )
-                )
-
-                NavigationBarItem(
-                    selected = currentScreen == Screen.ADMIN,
-                    onClick = { viewModel.navigateTo(Screen.ADMIN) },
-                    icon = { Icon(Icons.Default.AdminPanelSettings, contentDescription = "Admin") },
-                    label = { Text("Admin") },
                     colors = NavigationBarItemDefaults.colors(
                         indicatorColor = CyanPrimary.copy(alpha = 0.2f),
                         selectedIconColor = CyanPrimary
