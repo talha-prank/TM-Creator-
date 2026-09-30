@@ -1,0 +1,1233 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Talha Mahmood | Digital Creator & Technology Professional</title>
+  <meta name="description" content="Portfolio of Talha Mahmood - Professional website creator, digital marketing strategist, and technology solutions provider." />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="https://i.postimg.cc/ydhLzpzc/profile.jpg" />
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              cyan: '#06b6d4',
+              cyanDark: '#0891b2',
+              cyanLight: '#22d3ee',
+              dark: '#0b1120',
+              card: '#111827',
+              border: '#1f2937',
+              accent: '#10b981'
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['"Space Grotesk"', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    body {
+      background-color: #0b1120;
+      color: #f1f5f9;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .glow-cyan {
+      box-shadow: 0 0 35px -5px rgba(6, 182, 212, 0.3);
+    }
+    .glow-accent {
+      box-shadow: 0 0 35px -5px rgba(16, 185, 129, 0.3);
+    }
+    .gradient-text {
+      background: linear-gradient(135deg, #38bdf8 0%, #06b6d4 50%, #2dd4bf 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .glass-card {
+      background: rgba(17, 24, 39, 0.75);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .glass-card:hover {
+      border-color: rgba(6, 182, 212, 0.4);
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col selection:bg-cyan-500 selection:text-white">
+
+  <!-- ================= TOP NAVIGATION BAR ================= -->
+  <header class="sticky top-0 z-50 glass-card border-b border-gray-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo & Secret Admin Trigger -->
+      <a href="#home" class="flex items-center gap-3 group" title="Talha Mahmood">
+        <div class="relative cursor-pointer" onclick="handleAvatarSecretClick(event)">
+          <img 
+            src="https://i.postimg.cc/ydhLzpzc/profile.jpg" 
+            alt="Talha Mahmood" 
+            class="w-11 h-11 rounded-full object-cover border-2 border-cyan-400 group-hover:scale-105 transition duration-200" 
+          />
+          <span class="absolute bottom-0 right-0 w-3.5 h-3.5 bg-emerald-500 border-2 border-gray-900 rounded-full"></span>
+        </div>
+        <div>
+          <span class="font-display font-bold text-lg text-white group-hover:text-cyan-400 transition flex items-center gap-1.5">
+            Talha Mahmood
+            <i data-lucide="badge-check" class="w-4 h-4 text-cyan-400 fill-cyan-400/20"></i>
+          </span>
+          <span class="text-xs text-gray-400 block -mt-0.5">Digital Creator & Tech Pro</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
+        <a href="#services" class="hover:text-cyan-400 transition">Services</a>
+        <a href="#estimator" class="hover:text-cyan-400 transition">Cost Estimator</a>
+        <a href="#projects" class="hover:text-cyan-400 transition">Projects</a>
+        <a href="#skills" class="hover:text-cyan-400 transition">Skills</a>
+        <a href="#contact" class="hover:text-cyan-400 transition">Contact</a>
+      </nav>
+
+      <!-- CTA Buttons & APK Download -->
+      <div class="hidden sm:flex items-center gap-3">
+        <a 
+          href="#download-app"
+          class="flex items-center gap-2 px-4 py-2 rounded-xl bg-gray-800 hover:bg-gray-700 text-cyan-300 text-xs font-semibold border border-cyan-500/30 transition shadow-sm hover:border-cyan-400"
+        >
+          <i data-lucide="smartphone" class="w-4 h-4 text-cyan-400"></i>
+          Get Android App
+        </a>
+        <a 
+          href="https://wa.me/923255691055?text=Hello%20Talha,%20I%20am%20interested%20in%20working%20with%20you!" 
+          target="_blank"
+          class="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-cyan-600 hover:from-cyan-400 hover:to-cyan-500 text-slate-950 font-bold text-sm transition shadow-lg glow-cyan"
+        >
+          <i data-lucide="message-circle" class="w-4 h-4"></i>
+          Hire Me
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger -->
+      <button 
+        id="mobileMenuBtn" 
+        class="md:hidden p-2 text-gray-400 hover:text-white focus:outline-none"
+        onclick="toggleMobileMenu()"
+        aria-label="Open Menu"
+      >
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Nav Dropdown -->
+    <div id="mobileMenu" class="hidden md:hidden border-t border-gray-800 bg-gray-900/95 px-6 py-5 space-y-4">
+      <a href="#services" onclick="toggleMobileMenu()" class="block text-gray-300 hover:text-cyan-400 font-medium py-1">Services</a>
+      <a href="#estimator" onclick="toggleMobileMenu()" class="block text-gray-300 hover:text-cyan-400 font-medium py-1">Cost Estimator</a>
+      <a href="#projects" onclick="toggleMobileMenu()" class="block text-gray-300 hover:text-cyan-400 font-medium py-1">Projects</a>
+      <a href="#skills" onclick="toggleMobileMenu()" class="block text-gray-300 hover:text-cyan-400 font-medium py-1">Skills</a>
+      <a href="#contact" onclick="toggleMobileMenu()" class="block text-gray-300 hover:text-cyan-400 font-medium py-1">Contact</a>
+      <div class="pt-3 border-t border-gray-800 flex flex-col gap-3">
+        <a 
+          href="#download-app" 
+          onclick="toggleMobileMenu()"
+          class="w-full flex items-center justify-center gap-2 py-3 bg-gray-800 text-cyan-300 font-semibold rounded-xl border border-cyan-500/30 text-sm"
+        >
+          <i data-lucide="smartphone" class="w-4 h-4 text-cyan-400"></i>
+          Download Android App (.APK)
+        </a>
+        <a 
+          href="https://wa.me/923255691055?text=Hello%20Talha,%20I%20am%20interested%20in%20working%20with%20you!" 
+          target="_blank"
+          class="w-full flex items-center justify-center gap-2 py-3 bg-cyan-500 text-slate-950 font-bold rounded-xl text-sm"
+        >
+          <i data-lucide="message-circle" class="w-4 h-4"></i>
+          Chat on WhatsApp
+        </a>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- ================= HERO SECTION ================= -->
+  <section id="home" class="relative overflow-hidden pt-12 pb-20 md:pt-20 md:pb-28">
+    <!-- Ambient background glow -->
+    <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-96 h-96 bg-cyan-500/15 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute top-48 right-10 w-72 h-72 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Hero Content -->
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          
+          <!-- Availability Pill -->
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-cyan-300 text-xs font-semibold">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+            Available for New Projects & Freelance Worldwide
+          </div>
+
+          <!-- Headline -->
+          <h1 class="font-display font-extrabold text-4xl sm:text-5xl md:text-6xl text-white tracking-tight leading-[1.15]">
+            Turning Ideas Into <br />
+            <span class="gradient-text">Powerful Digital Experiences.</span>
+          </h1>
+
+          <!-- Subheadline -->
+          <p class="text-gray-300 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+            I create modern, high-speed websites, distinctive brand identities, and digital marketing strategies that help businesses build trust, attract clients, and accelerate growth.
+          </p>
+
+          <!-- Action Buttons Group -->
+          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
+            <!-- Download APK Button -->
+            <a 
+              href="./Talha-Mahmood-Portfolio.apk" 
+              download="Talha-Mahmood-Portfolio.apk"
+              id="apkDownloadMainBtn"
+              class="flex items-center gap-3 px-6 py-3.5 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-white font-bold text-sm sm:text-base shadow-xl glow-accent transition group"
+            >
+              <i data-lucide="smartphone" class="w-5 h-5 group-hover:scale-110 transition"></i>
+              <div class="text-left">
+                <span class="block text-xs uppercase tracking-wider text-emerald-100 font-semibold">Install On Mobile</span>
+                <span class="block leading-none">Download Android App</span>
+              </div>
+            </a>
+
+            <!-- WhatsApp Direct -->
+            <a 
+              href="https://wa.me/923255691055?text=Hi%20Talha!%20I%20saw%20your%20website%20and%20would%20like%20to%20discuss%20a%20project." 
+              target="_blank"
+              class="flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-gray-800/90 hover:bg-gray-700/90 text-white font-semibold text-sm sm:text-base border border-gray-700 transition"
+            >
+              <i data-lucide="message-circle" class="w-5 h-5 text-emerald-400"></i>
+              Chat on WhatsApp
+            </a>
+          </div>
+
+          <!-- Quick Contact Bar -->
+          <div class="pt-4 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-xs sm:text-sm text-gray-400">
+            <a href="tel:03255691055" class="flex items-center gap-2 hover:text-cyan-400 transition">
+              <i data-lucide="phone" class="w-4 h-4 text-cyan-400"></i>
+              03255691055
+            </a>
+            <a href="mailto:talhamahmood1055@gmail.com" class="flex items-center gap-2 hover:text-cyan-400 transition">
+              <i data-lucide="mail" class="w-4 h-4 text-cyan-400"></i>
+              talhamahmood1055@gmail.com
+            </a>
+            <span class="flex items-center gap-1.5 text-gray-500">
+              <i data-lucide="map-pin" class="w-4 h-4 text-cyan-400"></i>
+              Pakistan / Remote Worldwide
+            </span>
+          </div>
+
+        </div>
+
+        <!-- Right Hero Profile Showcase Card -->
+        <div class="lg:col-span-5 flex justify-center">
+          <div class="relative w-full max-w-md">
+            
+            <div class="glass-card rounded-3xl p-6 sm:p-8 relative shadow-2xl overflow-hidden border border-cyan-500/20">
+              <!-- Top Card Info -->
+              <div class="flex items-center gap-4 mb-6">
+                <div class="relative">
+                  <img 
+                    src="https://i.postimg.cc/ydhLzpzc/profile.jpg" 
+                    alt="Talha Mahmood Profile" 
+                    class="w-20 h-20 rounded-2xl object-cover border-2 border-cyan-400 shadow-md"
+                  />
+                  <span class="absolute -bottom-1 -right-1 bg-cyan-500 text-slate-950 p-1 rounded-full shadow">
+                    <i data-lucide="check" class="w-3.5 h-3.5 stroke-[3]"></i>
+                  </span>
+                </div>
+                <div>
+                  <h2 class="text-xl font-bold font-display text-white">Talha Mahmood</h2>
+                  <p class="text-xs text-cyan-400 font-medium">Digital Creator & Strategist</p>
+                  <div class="flex items-center gap-1 mt-1 text-xs text-amber-400 font-semibold">
+                    <span>★★★★★</span>
+                    <span class="text-gray-400 ml-1">(5.0 Rating)</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Quick Highlights list -->
+              <div class="space-y-3 mb-6 text-sm">
+                <div class="flex items-center justify-between p-3 rounded-xl bg-gray-900/60 border border-gray-800">
+                  <span class="text-gray-400 flex items-center gap-2">
+                    <i data-lucide="globe" class="w-4 h-4 text-cyan-400"></i>
+                    Modern Websites
+                  </span>
+                  <span class="text-emerald-400 font-bold text-xs uppercase tracking-wide">SEO Optimized</span>
+                </div>
+                <div class="flex items-center justify-between p-3 rounded-xl bg-gray-900/60 border border-gray-800">
+                  <span class="text-gray-400 flex items-center gap-2">
+                    <i data-lucide="smartphone" class="w-4 h-4 text-cyan-400"></i>
+                    Android Mobile App
+                  </span>
+                  <span class="text-cyan-400 font-bold text-xs uppercase tracking-wide">Live APK</span>
+                </div>
+                <div class="flex items-center justify-between p-3 rounded-xl bg-gray-900/60 border border-gray-800">
+                  <span class="text-gray-400 flex items-center gap-2">
+                    <i data-lucide="clock" class="w-4 h-4 text-cyan-400"></i>
+                    Turnaround Time
+                  </span>
+                  <span class="text-white font-medium text-xs">Fast & Reliable</span>
+                </div>
+              </div>
+
+              <!-- Android App Quick Download Box inside Card -->
+              <div class="p-4 rounded-2xl bg-cyan-950/40 border border-cyan-500/30 flex items-center justify-between">
+                <div>
+                  <h3 class="text-sm font-bold text-white flex items-center gap-1.5">
+                    <i data-lucide="android" class="w-4 h-4 text-emerald-400"></i>
+                    Get Mobile Version
+                  </h3>
+                  <p class="text-xs text-gray-400 mt-0.5">Install on your Android phone</p>
+                </div>
+                <a 
+                  href="./Talha-Mahmood-Portfolio.apk" 
+                  download="Talha-Mahmood-Portfolio.apk"
+                  class="px-3.5 py-1.5 rounded-lg bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs transition"
+                >
+                  Download
+                </a>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================= APP DOWNLOAD BANNER ================= -->
+  <section id="download-app" class="py-12 bg-gradient-to-b from-gray-900 to-gray-950 border-y border-gray-800 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="glass-card rounded-3xl p-8 md:p-12 border border-cyan-500/30 relative overflow-hidden">
+        <div class="absolute -right-16 -top-16 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl"></div>
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center relative z-10">
+          
+          <div class="md:col-span-8 space-y-4 text-center md:text-left">
+            <span class="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xs uppercase tracking-wider border border-emerald-500/30">
+              Official Android Release
+            </span>
+            <h2 class="text-2xl sm:text-3xl font-display font-bold text-white">
+              Install the <span class="text-cyan-400">Talha Mahmood</span> Mobile App
+            </h2>
+            <p class="text-gray-300 text-sm sm:text-base max-w-xl">
+              Access my portfolio, services catalog, interactive budget calculator, and direct 1-tap WhatsApp consultation anytime right from your Android phone's home screen!
+            </p>
+            <div class="flex flex-wrap items-center justify-center md:justify-start gap-4 pt-2">
+              <a 
+                href="./Talha-Mahmood-Portfolio.apk" 
+                download="Talha-Mahmood-Portfolio.apk"
+                class="flex items-center gap-3 px-6 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-cyan-600 hover:from-cyan-400 text-slate-950 font-bold text-sm shadow-lg glow-cyan transition"
+              >
+                <i data-lucide="download" class="w-5 h-5"></i>
+                Download APK File (23 MB)
+              </a>
+              <a 
+                href="#estimator" 
+                class="flex items-center gap-2 px-5 py-3.5 rounded-xl bg-gray-800 hover:bg-gray-700 text-white font-medium text-sm border border-gray-700 transition"
+              >
+                <i data-lucide="calculator" class="w-4 h-4 text-cyan-400"></i>
+                Calculate Project Cost
+              </a>
+            </div>
+          </div>
+
+          <div class="md:col-span-4 flex justify-center">
+            <div class="text-center p-6 rounded-2xl bg-gray-900/80 border border-gray-800 w-full max-w-xs">
+              <div class="w-16 h-16 rounded-2xl bg-cyan-500/10 border border-cyan-400/30 mx-auto flex items-center justify-center mb-3">
+                <i data-lucide="shield-check" class="w-8 h-8 text-cyan-400"></i>
+              </div>
+              <h3 class="font-bold text-white text-base">Direct & Safe Install</h3>
+              <p class="text-xs text-gray-400 mt-1">Verified Android build with zero ads and 100% offline database support.</p>
+              <div class="mt-4 pt-4 border-t border-gray-800 flex justify-between text-xs text-gray-400">
+                <span>Version: <strong>1.0.0</strong></span>
+                <span>Type: <strong>APK</strong></span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================= SERVICES CATALOG ================= -->
+  <section id="services" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+      <span class="text-xs font-bold uppercase tracking-wider text-cyan-400 bg-cyan-950/60 px-3 py-1 rounded-full border border-cyan-500/20">
+        Professional Offerings
+      </span>
+      <h2 class="text-3xl sm:text-4xl font-display font-bold text-white">
+        Services Built for Your Business Growth
+      </h2>
+      <p class="text-gray-400 text-sm sm:text-base">
+        High-quality digital solutions tailored for startups, professionals, students, and established enterprises.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      
+      <!-- Service 1: Website Creation -->
+      <div class="glass-card rounded-2xl p-7 border border-gray-800 transition duration-300 hover:-translate-y-1">
+        <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 mb-5">
+          <i data-lucide="globe" class="w-6 h-6"></i>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-2 font-display">Modern Website Creation</h3>
+        <p class="text-gray-400 text-sm mb-4">
+          Custom, ultra-fast websites designed to convert visitors into paying clients. Responsive across smartphones, tablets, and desktops.
+        </p>
+        <ul class="space-y-2 text-xs text-gray-300 mb-6">
+          <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400"></i> Fast Loading Speed & Clean Code</li>
+          <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400"></i> Mobile Responsive & Tablet Optimized</li>
+          <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400"></i> Contact Forms & WhatsApp Integration</li>
+        </ul>
+        <a 
+          href="https://wa.me/923255691055?text=Hello%20Talha,%20I%20am%20interested%20in%20Website%20Creation%20service." 
+          target="_blank"
+          class="block text-center py-2.5 px-4 rounded-xl bg-gray-800 hover:bg-cyan-500 hover:text-slate-950 text-cyan-400 font-semibold text-xs transition border border-cyan-500/20"
+        >
+          Inquire About Websites
+        </a>
+      </div>
+
+      <!-- Service 2: Brand Identity & Graphic Design -->
+      <div class="glass-card rounded-2xl p-7 border border-gray-800 transition duration-300 hover:-translate-y-1">
+        <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 mb-5">
+          <i data-lucide="palette" class="w-6 h-6"></i>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-2 font-display">Brand Identity & Design</h3>
+        <p class="text-gray-400 text-sm mb-4">
+          Visual branding that makes your business memorable. Cohesive logo designs, social media graphics, and digital marketing banners.
+        </p>
+        <ul class="space-y-2 text-xs text-gray-300 mb-6">
+          <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400"></i> Distinctive Modern Logo Concepts</li>
+          <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400"></i> Social Media Brand Kits & Covers</li>
+          <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400"></i> Marketing Materials & Digital Banners</li>
+        </ul>
+        <a 
+          href="https://wa.me/923255691055?text=Hello%20Talha,%20I%20am%20interested%20in%20Brand%20Identity%20and%20Graphic%20Design." 
+          target="_blank"
+          class="block text-center py-2.5 px-4 rounded-xl bg-gray-800 hover:bg-cyan-500 hover:text-slate-950 text-cyan-400 font-semibold text-xs transition border border-cyan-500/20"
+        >
+          Inquire About Branding
+        </a>
+      </div>
+
+      <!-- Service 3: Search Engine Optimization (SEO) -->
+      <div class="glass-card rounded-2xl p-7 border border-gray-800 transition duration-300 hover:-translate-y-1">
+        <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 mb-5">
+          <i data-lucide="trending-up" class="w-6 h-6"></i>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-2 font-display">SEO & Search Visibility</h3>
+        <p class="text-gray-400 text-sm mb-4">
+          Rank higher on Google searches. Target keywords that potential customers are actively searching for to generate organic inbound leads.
+        </p>
+        <ul class="space-y-2 text-xs text-gray-300 mb-6">
+          <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400"></i> On-Page Meta & Keyword Optimization</li>
+          <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400"></i> Google Search Console & Indexing</li>
+          <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400"></i> Competitor Keyword Research</li>
+        </ul>
+        <a 
+          href="https://wa.me/923255691055?text=Hello%20Talha,%20I%20am%20interested%20in%20SEO%20Optimization." 
+          target="_blank"
+          class="block text-center py-2.5 px-4 rounded-xl bg-gray-800 hover:bg-cyan-500 hover:text-slate-950 text-cyan-400 font-semibold text-xs transition border border-cyan-500/20"
+        >
+          Inquire About SEO
+        </a>
+      </div>
+
+      <!-- Service 4: Digital Marketing & Social Growth -->
+      <div class="glass-card rounded-2xl p-7 border border-gray-800 transition duration-300 hover:-translate-y-1">
+        <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 mb-5">
+          <i data-lucide="share-2" class="w-6 h-6"></i>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-2 font-display">Digital Marketing Strategy</h3>
+        <p class="text-gray-400 text-sm mb-4">
+          Strategic campaigns and content plans to expand your reach across social media channels and build an engaged following.
+        </p>
+        <ul class="space-y-2 text-xs text-gray-300 mb-6">
+          <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400"></i> Target Audience Profiling</li>
+          <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400"></i> Content Calendars & Ad Creatives</li>
+          <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400"></i> Growth Analytics & Reporting</li>
+        </ul>
+        <a 
+          href="https://wa.me/923255691055?text=Hello%20Talha,%20I%20am%20interested%20in%20Digital%20Marketing." 
+          target="_blank"
+          class="block text-center py-2.5 px-4 rounded-xl bg-gray-800 hover:bg-cyan-500 hover:text-slate-950 text-cyan-400 font-semibold text-xs transition border border-cyan-500/20"
+        >
+          Inquire About Marketing
+        </a>
+      </div>
+
+      <!-- Service 5: Data Management & Entry -->
+      <div class="glass-card rounded-2xl p-7 border border-gray-800 transition duration-300 hover:-translate-y-1">
+        <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 mb-5">
+          <i data-lucide="database" class="w-6 h-6"></i>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-2 font-display">Data Management & Services</h3>
+        <p class="text-gray-400 text-sm mb-4">
+          Accurate data processing, clean spreadsheets, CRM database maintenance, and automated workflow formatting for businesses.
+        </p>
+        <ul class="space-y-2 text-xs text-gray-300 mb-6">
+          <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400"></i> 100% Accuracy & Quality Checked</li>
+          <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400"></i> Excel, Google Sheets, & SQLite</li>
+          <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400"></i> Data Cleaning & Formatting</li>
+        </ul>
+        <a 
+          href="https://wa.me/923255691055?text=Hello%20Talha,%20I%20am%20interested%20in%20Data%20Services." 
+          target="_blank"
+          class="block text-center py-2.5 px-4 rounded-xl bg-gray-800 hover:bg-cyan-500 hover:text-slate-950 text-cyan-400 font-semibold text-xs transition border border-cyan-500/20"
+        >
+          Inquire About Data Services
+        </a>
+      </div>
+
+      <!-- Service 6: Custom Mobile & Web Solutions -->
+      <div class="glass-card rounded-2xl p-7 border border-gray-800 transition duration-300 hover:-translate-y-1">
+        <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 mb-5">
+          <i data-lucide="code" class="w-6 h-6"></i>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-2 font-display">Custom Android & Web Apps</h3>
+        <p class="text-gray-400 text-sm mb-4">
+          Custom software solutions like this native portfolio app, with local database persistence, interactive dashboards, and business tools.
+        </p>
+        <ul class="space-y-2 text-xs text-gray-300 mb-6">
+          <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400"></i> Jetpack Compose & Kotlin Modern Code</li>
+          <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400"></i> Offline-First Database (Room/SQLite)</li>
+          <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400"></i> Direct APK Delivery & Play Store Ready</li>
+        </ul>
+        <a 
+          href="https://wa.me/923255691055?text=Hello%20Talha,%20I%20want%20to%20develop%20a%20Custom%20App%20or%20Software." 
+          target="_blank"
+          class="block text-center py-2.5 px-4 rounded-xl bg-gray-800 hover:bg-cyan-500 hover:text-slate-950 text-cyan-400 font-semibold text-xs transition border border-cyan-500/20"
+        >
+          Inquire About Apps
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================= INTERACTIVE ESTIMATOR ================= -->
+  <section id="estimator" class="py-20 bg-gray-900/60 border-y border-gray-800/80">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center mb-12 space-y-3">
+        <span class="text-xs font-bold uppercase tracking-wider text-cyan-400 bg-cyan-950/60 px-3 py-1 rounded-full border border-cyan-500/20">
+          Instant Transparency
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-display font-bold text-white">
+          Interactive Project Cost Estimator
+        </h2>
+        <p class="text-gray-400 text-sm sm:text-base">
+          Select your requirements below to instantly calculate estimated investment and delivery timeline.
+        </p>
+      </div>
+
+      <div class="glass-card rounded-3xl p-6 sm:p-10 border border-cyan-500/30">
+        
+        <!-- Step 1: Project Type -->
+        <div class="mb-8">
+          <label class="block text-sm font-bold text-gray-200 mb-3">1. Select Project Type</label>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3" id="serviceTypeSelector">
+            <button onclick="setEstimatorService('website', 15000, 5, this)" class="service-opt p-3.5 rounded-xl border border-cyan-500 bg-cyan-500/20 text-cyan-300 font-semibold text-xs sm:text-sm text-center">
+              Website
+            </button>
+            <button onclick="setEstimatorService('branding', 8000, 3, this)" class="service-opt p-3.5 rounded-xl border border-gray-800 bg-gray-900/60 text-gray-300 font-semibold text-xs sm:text-sm text-center hover:border-gray-700">
+              Branding / Logo
+            </button>
+            <button onclick="setEstimatorService('seo', 12000, 7, this)" class="service-opt p-3.5 rounded-xl border border-gray-800 bg-gray-900/60 text-gray-300 font-semibold text-xs sm:text-sm text-center hover:border-gray-700">
+              SEO Optimization
+            </button>
+            <button onclick="setEstimatorService('full', 30000, 10, this)" class="service-opt p-3.5 rounded-xl border border-gray-800 bg-gray-900/60 text-gray-300 font-semibold text-xs sm:text-sm text-center hover:border-gray-700">
+              Full Package
+            </button>
+          </div>
+        </div>
+
+        <!-- Step 2: Page Count / Scale Slider -->
+        <div class="mb-8">
+          <div class="flex justify-between items-center mb-2">
+            <label class="text-sm font-bold text-gray-200">2. Project Scope / Pages</label>
+            <span id="pagesDisplay" class="text-cyan-400 font-bold text-sm">3 - 5 Pages</span>
+          </div>
+          <input 
+            type="range" 
+            min="1" 
+            max="15" 
+            value="3" 
+            id="pagesSlider" 
+            oninput="updateEstimator()" 
+            class="w-full accent-cyan-400 cursor-pointer h-2 bg-gray-800 rounded-lg"
+          />
+        </div>
+
+        <!-- Step 3: Delivery Speed -->
+        <div class="mb-8">
+          <label class="block text-sm font-bold text-gray-200 mb-3">3. Delivery Timeline</label>
+          <div class="grid grid-cols-2 gap-3" id="speedSelector">
+            <button onclick="setDeliverySpeed('standard', 1.0, this)" class="speed-opt p-3.5 rounded-xl border border-cyan-500 bg-cyan-500/20 text-cyan-300 font-semibold text-xs sm:text-sm text-center">
+              Standard Delivery
+            </button>
+            <button onclick="setDeliverySpeed('express', 1.25, this)" class="speed-opt p-3.5 rounded-xl border border-gray-800 bg-gray-900/60 text-gray-300 font-semibold text-xs sm:text-sm text-center hover:border-gray-700">
+              Express Rush (+25%)
+            </button>
+          </div>
+        </div>
+
+        <!-- Calculation Result Box -->
+        <div class="p-6 rounded-2xl bg-cyan-950/40 border border-cyan-500/40 flex flex-col sm:flex-row items-center justify-between gap-6">
+          <div>
+            <span class="text-xs uppercase tracking-wider text-cyan-300 font-semibold">Estimated Investment</span>
+            <div class="flex items-baseline gap-2 mt-1">
+              <span id="priceDisplay" class="text-3xl sm:text-4xl font-display font-extrabold text-white">PKR 18,000</span>
+              <span class="text-xs text-gray-400">/ estimated</span>
+            </div>
+            <p id="timelineDisplay" class="text-xs text-gray-400 mt-1 flex items-center gap-1.5">
+              <i data-lucide="clock" class="w-3.5 h-3.5 text-cyan-400"></i>
+              Estimated Completion: <strong>4 - 6 Business Days</strong>
+            </p>
+          </div>
+
+          <button 
+            onclick="bookWithEstimate()"
+            class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 text-white font-bold text-sm flex items-center justify-center gap-2 shadow-lg glow-accent transition"
+          >
+            <i data-lucide="message-circle" class="w-4 h-4"></i>
+            Book via WhatsApp
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================= PORTFOLIO / PROJECTS GALLERY ================= -->
+  <section id="projects" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+      <span class="text-xs font-bold uppercase tracking-wider text-cyan-400 bg-cyan-950/60 px-3 py-1 rounded-full border border-cyan-500/20">
+        Proven Work
+      </span>
+      <h2 class="text-3xl sm:text-4xl font-display font-bold text-white">
+        Featured Projects & Implementations
+      </h2>
+      <p class="text-gray-400 text-sm sm:text-base">
+        A selection of digital solutions built with performance, high aesthetics, and user trust.
+      </p>
+    </div>
+
+    <!-- Category Filters -->
+    <div class="flex flex-wrap items-center justify-center gap-2 mb-12">
+      <button onclick="filterProjects('all', this)" class="proj-filter px-4 py-2 rounded-xl bg-cyan-500 text-slate-950 font-bold text-xs">All Work</button>
+      <button onclick="filterProjects('web', this)" class="proj-filter px-4 py-2 rounded-xl bg-gray-800 text-gray-300 font-semibold text-xs hover:bg-gray-700">Websites</button>
+      <button onclick="filterProjects('branding', this)" class="proj-filter px-4 py-2 rounded-xl bg-gray-800 text-gray-300 font-semibold text-xs hover:bg-gray-700">Branding & Logo</button>
+      <button onclick="filterProjects('seo', this)" class="proj-filter px-4 py-2 rounded-xl bg-gray-800 text-gray-300 font-semibold text-xs hover:bg-gray-700">SEO & Growth</button>
+      <button onclick="filterProjects('app', this)" class="proj-filter px-4 py-2 rounded-xl bg-gray-800 text-gray-300 font-semibold text-xs hover:bg-gray-700">Mobile Apps</button>
+    </div>
+
+    <!-- Projects Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="projectsContainer">
+      
+      <!-- Project 1 -->
+      <div class="project-card web glass-card rounded-2xl overflow-hidden border border-gray-800 flex flex-col">
+        <div class="h-48 bg-gradient-to-tr from-cyan-950/80 to-gray-900 p-6 flex flex-col justify-end border-b border-gray-800 relative">
+          <span class="absolute top-4 right-4 px-2.5 py-1 rounded-md bg-cyan-500/20 text-cyan-300 text-xs font-semibold border border-cyan-500/30">
+            Web Creation
+          </span>
+          <h4 class="text-lg font-bold font-display text-white">Apex Business Digital Platform</h4>
+          <p class="text-xs text-gray-400">High-converting corporate presence with integrated booking</p>
+        </div>
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <p class="text-xs text-gray-400 leading-relaxed mb-4">
+            Designed and launched a modern corporate website with dynamic service listings, responsive layouts, and direct WhatsApp lead capture.
+          </p>
+          <div class="flex flex-wrap gap-1.5 mb-6">
+            <span class="px-2 py-0.5 rounded bg-gray-800 text-gray-300 text-[10px] font-medium">React</span>
+            <span class="px-2 py-0.5 rounded bg-gray-800 text-gray-300 text-[10px] font-medium">Tailwind CSS</span>
+            <span class="px-2 py-0.5 rounded bg-gray-800 text-gray-300 text-[10px] font-medium">SEO</span>
+          </div>
+          <a href="https://wa.me/923255691055?text=I%20want%20to%20see%20details%20about%20Apex%20Business%20Platform" target="_blank" class="text-xs text-cyan-400 font-bold hover:underline flex items-center gap-1">
+            Request Demo / Case Study <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="project-card branding glass-card rounded-2xl overflow-hidden border border-gray-800 flex flex-col">
+        <div class="h-48 bg-gradient-to-tr from-indigo-950/80 to-gray-900 p-6 flex flex-col justify-end border-b border-gray-800 relative">
+          <span class="absolute top-4 right-4 px-2.5 py-1 rounded-md bg-indigo-500/20 text-indigo-300 text-xs font-semibold border border-indigo-500/30">
+            Branding
+          </span>
+          <h4 class="text-lg font-bold font-display text-white">Lumina Brand Visual Identity</h4>
+          <p class="text-xs text-gray-400">Complete visual design system & digital marketing kit</p>
+        </div>
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <p class="text-xs text-gray-400 leading-relaxed mb-4">
+            Crafted a minimal, modern brand identity including vector logo suites, typography rules, business cards, and social media post templates.
+          </p>
+          <div class="flex flex-wrap gap-1.5 mb-6">
+            <span class="px-2 py-0.5 rounded bg-gray-800 text-gray-300 text-[10px] font-medium">Vector Logo</span>
+            <span class="px-2 py-0.5 rounded bg-gray-800 text-gray-300 text-[10px] font-medium">Typography</span>
+            <span class="px-2 py-0.5 rounded bg-gray-800 text-gray-300 text-[10px] font-medium">Social Kit</span>
+          </div>
+          <a href="https://wa.me/923255691055?text=I%20want%20to%20see%20details%20about%20Lumina%20Brand%20Identity" target="_blank" class="text-xs text-cyan-400 font-bold hover:underline flex items-center gap-1">
+            Request Demo / Case Study <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="project-card app glass-card rounded-2xl overflow-hidden border border-gray-800 flex flex-col">
+        <div class="h-48 bg-gradient-to-tr from-teal-950/80 to-gray-900 p-6 flex flex-col justify-end border-b border-gray-800 relative">
+          <span class="absolute top-4 right-4 px-2.5 py-1 rounded-md bg-teal-500/20 text-teal-300 text-xs font-semibold border border-teal-500/30">
+            Android App
+          </span>
+          <h4 class="text-lg font-bold font-display text-white">Talha Mahmood Native Android App</h4>
+          <p class="text-xs text-gray-400">Jetpack Compose & Room offline SQLite database</p>
+        </div>
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <p class="text-xs text-gray-400 leading-relaxed mb-4">
+            Production-grade native Android app featuring dynamic dark/light Material 3 styling, offline lead management, and custom administrative dashboard.
+          </p>
+          <div class="flex flex-wrap gap-1.5 mb-6">
+            <span class="px-2 py-0.5 rounded bg-gray-800 text-gray-300 text-[10px] font-medium">Kotlin</span>
+            <span class="px-2 py-0.5 rounded bg-gray-800 text-gray-300 text-[10px] font-medium">Jetpack Compose</span>
+            <span class="px-2 py-0.5 rounded bg-gray-800 text-gray-300 text-[10px] font-medium">Room DB</span>
+          </div>
+          <a href="https://github.com/talha-prank/TM-Creator-/releases/latest" class="text-xs text-cyan-400 font-bold hover:underline flex items-center gap-1">
+            Download App APK <i data-lucide="download" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================= SKILLS SECTION ================= -->
+  <section id="skills" class="py-20 bg-gray-900/40 border-t border-gray-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-5 space-y-4">
+          <span class="text-xs font-bold uppercase tracking-wider text-cyan-400 bg-cyan-950/60 px-3 py-1 rounded-full border border-cyan-500/20">
+            Core Competencies
+          </span>
+          <h2 class="text-3xl font-display font-bold text-white">
+            Technical Proficiency & Creative Skills
+          </h2>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            I continuously refine my expertise across development, design systems, and digital marketing to build modern, dependable solutions.
+          </p>
+          <div class="pt-4 flex items-center gap-6">
+            <div>
+              <span class="block text-2xl font-bold font-display text-white">100%</span>
+              <span class="text-xs text-gray-400">Commitment to Quality</span>
+            </div>
+            <div class="w-px h-10 bg-gray-800"></div>
+            <div>
+              <span class="block text-2xl font-bold font-display text-cyan-400">24/7</span>
+              <span class="text-xs text-gray-400">Client Support</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 space-y-5">
+          
+          <div>
+            <div class="flex justify-between text-xs font-semibold mb-1.5">
+              <span class="text-gray-200">Modern Web & Website Creation (HTML5, Tailwind, React, CMS)</span>
+              <span class="text-cyan-400">92%</span>
+            </div>
+            <div class="w-full bg-gray-800 h-2.5 rounded-full overflow-hidden">
+              <div class="bg-gradient-to-r from-cyan-500 to-teal-400 h-full rounded-full" style="width: 92%"></div>
+            </div>
+          </div>
+
+          <div>
+            <div class="flex justify-between text-xs font-semibold mb-1.5">
+              <span class="text-gray-200">Brand Identity, Logo Design & UI/UX</span>
+              <span class="text-cyan-400">90%</span>
+            </div>
+            <div class="w-full bg-gray-800 h-2.5 rounded-full overflow-hidden">
+              <div class="bg-gradient-to-r from-cyan-500 to-teal-400 h-full rounded-full" style="width: 90%"></div>
+            </div>
+          </div>
+
+          <div>
+            <div class="flex justify-between text-xs font-semibold mb-1.5">
+              <span class="text-gray-200">SEO (Search Engine Optimization) & Organic Traffic</span>
+              <span class="text-cyan-400">88%</span>
+            </div>
+            <div class="w-full bg-gray-800 h-2.5 rounded-full overflow-hidden">
+              <div class="bg-gradient-to-r from-cyan-500 to-teal-400 h-full rounded-full" style="width: 88%"></div>
+            </div>
+          </div>
+
+          <div>
+            <div class="flex justify-between text-xs font-semibold mb-1.5">
+              <span class="text-gray-200">Data Management, Accuracy & Spreadsheets</span>
+              <span class="text-cyan-400">95%</span>
+            </div>
+            <div class="w-full bg-gray-800 h-2.5 rounded-full overflow-hidden">
+              <div class="bg-gradient-to-r from-cyan-500 to-teal-400 h-full rounded-full" style="width: 95%"></div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================= CONTACT SECTION ================= -->
+  <section id="contact" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+      <span class="text-xs font-bold uppercase tracking-wider text-cyan-400 bg-cyan-950/60 px-3 py-1 rounded-full border border-cyan-500/20">
+        Let's Connect
+      </span>
+      <h2 class="text-3xl sm:text-4xl font-display font-bold text-white">
+        Start Your Project Today
+      </h2>
+      <p class="text-gray-400 text-sm sm:text-base">
+        Send an inquiry below or reach out directly via WhatsApp for an immediate response.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+      
+      <!-- Contact Info Card -->
+      <div class="lg:col-span-5 space-y-6">
+        <div class="glass-card rounded-3xl p-8 border border-gray-800 space-y-6">
+          <h3 class="text-xl font-bold font-display text-white">Contact Information</h3>
+          
+          <div class="space-y-4">
+            <a href="https://wa.me/923255691055" target="_blank" class="flex items-center gap-4 p-4 rounded-2xl bg-gray-900/60 border border-gray-800 hover:border-emerald-500/40 transition group">
+              <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center group-hover:scale-110 transition">
+                <i data-lucide="message-circle" class="w-6 h-6"></i>
+              </div>
+              <div>
+                <span class="block text-xs text-gray-400">WhatsApp Direct</span>
+                <span class="block text-sm font-bold text-white">03255691055</span>
+              </div>
+            </a>
+
+            <a href="tel:03255691055" class="flex items-center gap-4 p-4 rounded-2xl bg-gray-900/60 border border-gray-800 hover:border-cyan-500/40 transition group">
+              <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center group-hover:scale-110 transition">
+                <i data-lucide="phone" class="w-6 h-6"></i>
+              </div>
+              <div>
+                <span class="block text-xs text-gray-400">Phone Call</span>
+                <span class="block text-sm font-bold text-white">03255691055</span>
+              </div>
+            </a>
+
+            <a href="mailto:talhamahmood1055@gmail.com" class="flex items-center gap-4 p-4 rounded-2xl bg-gray-900/60 border border-gray-800 hover:border-cyan-500/40 transition group">
+              <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center group-hover:scale-110 transition">
+                <i data-lucide="mail" class="w-6 h-6"></i>
+              </div>
+              <div>
+                <span class="block text-xs text-gray-400">Email Address</span>
+                <span class="block text-sm font-bold text-white">talhamahmood1055@gmail.com</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-cyan-950/30 border border-cyan-500/20 text-xs text-gray-300">
+            💡 <strong>Fastest Response:</strong> Message me on WhatsApp for immediate feedback and quotes.
+          </div>
+        </div>
+      </div>
+
+      <!-- Inquiry Form -->
+      <div class="lg:col-span-7">
+        <form id="contactForm" onsubmit="handleContactSubmit(event)" class="glass-card rounded-3xl p-8 border border-cyan-500/30 space-y-4">
+          
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-semibold text-gray-300 mb-1">Your Full Name *</label>
+              <input 
+                type="text" 
+                id="senderName" 
+                required 
+                placeholder="e.g. Ali Khan" 
+                class="w-full px-4 py-3 rounded-xl bg-gray-900/80 border border-gray-800 text-white placeholder-gray-500 focus:outline-none focus:border-cyan-400 text-sm"
+              />
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-gray-300 mb-1">Email Address *</label>
+              <input 
+                type="email" 
+                id="senderEmail" 
+                required 
+                placeholder="ali@example.com" 
+                class="w-full px-4 py-3 rounded-xl bg-gray-900/80 border border-gray-800 text-white placeholder-gray-500 focus:outline-none focus:border-cyan-400 text-sm"
+              />
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-semibold text-gray-300 mb-1">Phone / WhatsApp Number</label>
+              <input 
+                type="tel" 
+                id="senderPhone" 
+                placeholder="0300 1234567" 
+                class="w-full px-4 py-3 rounded-xl bg-gray-900/80 border border-gray-800 text-white placeholder-gray-500 focus:outline-none focus:border-cyan-400 text-sm"
+              />
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-gray-300 mb-1">Service Required</label>
+              <select 
+                id="senderService" 
+                class="w-full px-4 py-3 rounded-xl bg-gray-900/80 border border-gray-800 text-white focus:outline-none focus:border-cyan-400 text-sm"
+              >
+                <option value="Modern Website Creation">Modern Website Creation</option>
+                <option value="Brand Identity & Design">Brand Identity & Graphic Design</option>
+                <option value="SEO & Search Visibility">SEO & Search Visibility</option>
+                <option value="Digital Marketing Strategy">Digital Marketing Strategy</option>
+                <option value="Data Services">Data Management Services</option>
+                <option value="Custom Android App">Custom Android App</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-gray-300 mb-1">Project Details & Objectives *</label>
+            <textarea 
+              id="senderMessage" 
+              rows="4" 
+              required 
+              placeholder="Tell me about your business, what you need, and your target timeline..." 
+              class="w-full px-4 py-3 rounded-xl bg-gray-900/80 border border-gray-800 text-white placeholder-gray-500 focus:outline-none focus:border-cyan-400 text-sm"
+            ></textarea>
+          </div>
+
+          <div class="pt-2 flex flex-col sm:flex-row gap-3">
+            <button 
+              type="submit" 
+              class="flex-1 py-3.5 px-6 rounded-xl bg-gradient-to-r from-cyan-500 to-cyan-600 hover:from-cyan-400 text-slate-950 font-bold text-sm flex items-center justify-center gap-2 shadow-lg glow-cyan transition"
+            >
+              <i data-lucide="send" class="w-4 h-4"></i>
+              Send Project Inquiry
+            </button>
+            <button 
+              type="button" 
+              onclick="sendDirectWhatsApp()"
+              class="py-3.5 px-6 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm flex items-center justify-center gap-2 transition"
+            >
+              <i data-lucide="message-circle" class="w-4 h-4"></i>
+              Send via WhatsApp
+            </button>
+          </div>
+
+          <div id="submitNotice" class="hidden p-3 rounded-xl bg-emerald-950/60 border border-emerald-500/40 text-emerald-300 text-xs text-center font-medium mt-3">
+            Inquiry sent successfully! Opening email client...
+          </div>
+
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================= SECRET ADMIN MODAL (PIN: 1055) ================= -->
+  <div id="adminModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="glass-card rounded-3xl p-8 max-w-md w-full border border-cyan-500/40 shadow-2xl relative">
+      
+      <button onclick="closeAdminModal()" class="absolute top-5 right-5 text-gray-400 hover:text-white">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <div class="text-center space-y-3 mb-6">
+        <div class="w-14 h-14 rounded-2xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center mx-auto text-cyan-400">
+          <i data-lucide="lock" class="w-7 h-7"></i>
+        </div>
+        <h3 class="text-xl font-bold font-display text-white">Owner Admin Access</h3>
+        <p class="text-xs text-gray-400">Enter your secret owner PIN to unlock CRM leads and website controls.</p>
+      </div>
+
+      <div class="space-y-4" id="adminPinSection">
+        <div>
+          <label class="block text-xs font-semibold text-gray-300 mb-1">Security PIN</label>
+          <input 
+            type="password" 
+            id="adminPinInput" 
+            placeholder="••••" 
+            maxlength="8" 
+            class="w-full px-4 py-3 rounded-xl bg-gray-900 border border-gray-700 text-center tracking-[0.5em] text-lg text-white focus:outline-none focus:border-cyan-400"
+          />
+        </div>
+        
+        <p id="pinErrorMsg" class="hidden text-rose-400 text-xs text-center font-semibold">Incorrect PIN code.</p>
+
+        <button 
+          onclick="verifyAdminPin()" 
+          class="w-full py-3 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-sm transition"
+        >
+          Unlock Dashboard
+        </button>
+
+        <p class="text-[11px] text-center text-gray-500">Restricted Owner Access</p>
+      </div>
+
+      <!-- Logged In Admin Leads View -->
+      <div id="adminDashboardView" class="hidden space-y-4">
+        <div class="p-4 rounded-xl bg-cyan-950/40 border border-cyan-500/30 text-xs text-cyan-200">
+          Welcome Talha! You are authenticated as owner.
+        </div>
+        <div class="max-h-60 overflow-y-auto space-y-2 pr-1" id="adminInquiriesList">
+          <p class="text-xs text-gray-400 text-center py-4">No new inquiries logged in local browser storage yet.</p>
+        </div>
+        <button 
+          onclick="logoutAdmin()" 
+          class="w-full py-2.5 rounded-xl bg-gray-800 text-gray-300 hover:text-white text-xs font-semibold"
+        >
+          Lock & Exit
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="mt-auto border-t border-gray-800/80 bg-gray-950 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+      
+      <div class="flex items-center gap-3">
+        <img src="https://i.postimg.cc/ydhLzpzc/profile.jpg" alt="Talha Mahmood" class="w-8 h-8 rounded-full object-cover border border-cyan-400" />
+        <span class="text-sm font-bold text-white">Talha Mahmood</span>
+        <span class="text-xs text-gray-500">© 2026. All rights reserved.</span>
+      </div>
+
+      <div class="flex items-center gap-6 text-xs text-gray-400">
+        <a href="#services" class="hover:text-cyan-400 transition">Services</a>
+        <a href="#estimator" class="hover:text-cyan-400 transition">Estimator</a>
+        <a href="#download-app" class="hover:text-cyan-400 transition">Android App</a>
+        <a href="https://github.com/talha-prank" target="_blank" class="hover:text-cyan-400 transition">GitHub</a>
+        <button onclick="openAdminModal()" class="text-gray-600 hover:text-gray-400 flex items-center gap-1" title="Owner Admin Mode">
+          <i data-lucide="lock" class="w-3 h-3"></i>
+        </button>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- ================= JAVASCRIPT LOGIC ================= -->
+  <script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+
+    // Mobile Menu Toggle
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('hidden');
+    }
+
+    // Interactive Cost Estimator State
+    let currentServiceBasePrice = 15000;
+    let currentServiceBaseDays = 5;
+    let currentSpeedMultiplier = 1.0;
+
+    function setEstimatorService(type, price, days, btn) {
+      currentServiceBasePrice = price;
+      currentServiceBaseDays = days;
+      document.querySelectorAll('.service-opt').forEach(b => {
+        b.classList.remove('border-cyan-500', 'bg-cyan-500/20', 'text-cyan-300');
+        b.classList.add('border-gray-800', 'bg-gray-900/60', 'text-gray-300');
+      });
+      btn.classList.remove('border-gray-800', 'bg-gray-900/60', 'text-gray-300');
+      btn.classList.add('border-cyan-500', 'bg-cyan-500/20', 'text-cyan-300');
+      updateEstimator();
+    }
+
+    function setDeliverySpeed(speed, multiplier, btn) {
+      currentSpeedMultiplier = multiplier;
+      document.querySelectorAll('.speed-opt').forEach(b => {
+        b.classList.remove('border-cyan-500', 'bg-cyan-500/20', 'text-cyan-300');
+        b.classList.add('border-gray-800', 'bg-gray-900/60', 'text-gray-300');
+      });
+      btn.classList.remove('border-gray-800', 'bg-gray-900/60', 'text-gray-300');
+      btn.classList.add('border-cyan-500', 'bg-cyan-500/20', 'text-cyan-300');
+      updateEstimator();
+    }
+
+    function updateEstimator() {
+      const slider = document.getElementById('pagesSlider');
+      const pages = parseInt(slider.value);
+      const pagesDisplay = document.getElementById('pagesDisplay');
+      
+      if (pages <= 3) {
+        pagesDisplay.innerText = "1 - 3 Pages / Simple";
+      } else if (pages <= 7) {
+        pagesDisplay.innerText = `${pages} Pages / Standard`;
+      } else {
+        pagesDisplay.innerText = `${pages}+ Pages / Multi-section`;
+      }
+
+      const scaleFactor = 1 + ((pages - 1) * 0.15);
+      const finalPrice = Math.round(currentServiceBasePrice * scaleFactor * currentSpeedMultiplier);
+      const finalDays = Math.max(2, Math.round(currentServiceBaseDays * (currentSpeedMultiplier > 1 ? 0.6 : 1)));
+
+      document.getElementById('priceDisplay').innerText = `PKR ${finalPrice.toLocaleString()}`;
+      document.getElementById('timelineDisplay').innerHTML = `
+        <i data-lucide="clock" class="w-3.5 h-3.5 text-cyan-400"></i>
+        Estimated Completion: <strong>${finalDays} - ${finalDays + 2} Business Days</strong>
+      `;
+      lucide.createIcons();
+    }
+
+    function bookWithEstimate() {
+      const price = document.getElementById('priceDisplay').innerText;
+      const text = `Hi Talha! I used your website project estimator:\nEstimated Price: ${price}\nI would like to book this project with you.`;
+      window.open(`https://wa.me/923255691055?text=${encodeURIComponent(text)}`, '_blank');
+    }
+
+    // Project Category Filtering
+    function filterProjects(category, btn) {
+      document.querySelectorAll('.proj-filter').forEach(b => {
+        b.classList.remove('bg-cyan-500', 'text-slate-950');
+        b.classList.add('bg-gray-800', 'text-gray-300');
+      });
+      btn.classList.remove('bg-gray-800', 'text-gray-300');
+      btn.classList.add('bg-cyan-500', 'text-slate-950');
+
+      const cards = document.querySelectorAll('.project-card');
+      cards.forEach(card => {
+        if (category === 'all' || card.classList.contains(category)) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    }
+
+    // Contact Form & WhatsApp Submission
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('senderName').value;
+      const email = document.getElementById('senderEmail').value;
+      const phone = document.getElementById('senderPhone').value;
+      const service = document.getElementById('senderService').value;
+      const message = document.getElementById('senderMessage').value;
+
+      // Save inquiry to local storage for Admin dashboard
+      const inquiries = JSON.parse(localStorage.getItem('tm_inquiries') || '[]');
+      inquiries.unshift({ name, email, phone, service, message, date: new Date().toLocaleDateString() });
+      localStorage.setItem('tm_inquiries', JSON.stringify(inquiries));
+
+      const mailSubject = encodeURIComponent(`New Project Inquiry from ${name} - ${service}`);
+      const mailBody = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nService: ${service}\n\nProject Details:\n${message}`);
+      
+      const notice = document.getElementById('submitNotice');
+      notice.classList.remove('hidden');
+
+      setTimeout(() => {
+        window.location.href = `mailto:talhamahmood1055@gmail.com?subject=${mailSubject}&body=${mailBody}`;
+      }, 700);
+    }
+
+    function sendDirectWhatsApp() {
+      const name = document.getElementById('senderName').value || 'Client';
+      const service = document.getElementById('senderService').value;
+      const message = document.getElementById('senderMessage').value;
+      const text = `Hi Talha! My name is ${name}.\nI need: ${service}.\nDetails: ${message}`;
+      window.open(`https://wa.me/923255691055?text=${encodeURIComponent(text)}`, '_blank');
+    }
+
+    // Secret Admin Mode
+    let avatarClicks = 0;
+    let avatarTimer = null;
+    function handleAvatarSecretClick(e) {
+      avatarClicks++;
+      clearTimeout(avatarTimer);
+      avatarTimer = setTimeout(() => { avatarClicks = 0; }, 2000);
+      if (avatarClicks >= 3) {
+        avatarClicks = 0;
+        openAdminModal();
+      }
+    }
+
+    function openAdminModal() {
+      document.getElementById('adminModal').classList.remove('hidden');
+      document.getElementById('adminModal').classList.add('flex');
+    }
+
+    function closeAdminModal() {
+      document.getElementById('adminModal').classList.remove('flex');
+      document.getElementById('adminModal').classList.add('hidden');
+    }
+
+    function verifyAdminPin() {
+      const pin = document.getElementById('adminPinInput').value;
+      const error = document.getElementById('pinErrorMsg');
+      if (pin === '1055') {
+        error.classList.add('hidden');
+        document.getElementById('adminPinSection').classList.add('hidden');
+        document.getElementById('adminDashboardView').classList.remove('hidden');
+        renderAdminInquiries();
+      } else {
+        error.classList.remove('hidden');
+      }
+    }
+
+    function logoutAdmin() {
+      document.getElementById('adminPinInput').value = '';
+      document.getElementById('adminPinSection').classList.remove('hidden');
+      document.getElementById('adminDashboardView').classList.add('hidden');
+      closeAdminModal();
+    }
+
+    function renderAdminInquiries() {
+      const list = document.getElementById('adminInquiriesList');
+      const inquiries = JSON.parse(localStorage.getItem('tm_inquiries') || '[]');
+      if (inquiries.length === 0) {
+        list.innerHTML = '<p class="text-xs text-gray-400 text-center py-4">No inquiries submitted on this browser yet.</p>';
+        return;
+      }
+      list.innerHTML = inquiries.map((item, idx) => `
+        <div class="p-3 rounded-xl bg-gray-900 border border-gray-800 text-xs">
+          <div class="flex justify-between font-bold text-white mb-1">
+            <span>${item.name} (${item.service})</span>
+            <span class="text-cyan-400">${item.date}</span>
+          </div>
+          <p class="text-gray-300 mb-1">${item.message}</p>
+          <div class="text-[11px] text-gray-500">
+            ✉️ ${item.email} | 📞 ${item.phone || 'N/A'}
+          </div>
+        </div>
+      `).join('');
+    }
+  </script>
+</body>
+</html>

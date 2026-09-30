@@ -1,15 +1,22 @@
-name: Build Android APK
+name: Build Android APK and Deploy Website
 
 on:
   push:
-    branches: [ "**" ]
-  pull_request:
-    branches: [ "**" ]
+    branches: [ "main", "**" ]
   workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
   build:
-    name: Build Installable APK
+    name: Build Installable APK & Deploy Website
     runs-on: ubuntu-latest
 
     steps:
@@ -35,9 +42,27 @@ jobs:
       - name: Build Debug APK with Gradle Wrapper
         run: ./gradlew assembleDebug --no-daemon --stacktrace
 
+      - name: Prepare Website & Include APK
+        run: |
+          mkdir -p docs
+          cp app/build/outputs/apk/debug/app-debug.apk docs/Talha-Mahmood-Portfolio.apk
+
       - name: Upload APK to Artifacts
         uses: actions/upload-artifact@v4
         with:
           name: Talha-Mahmood-App-APK
           path: app/build/outputs/apk/debug/app-debug.apk
           if-no-files-found: error
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './docs'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
