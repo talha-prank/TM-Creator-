@@ -11,12 +11,12 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages"
+  group: "build-and-deploy"
   cancel-in-progress: false
 
 jobs:
-  build:
-    name: Build Installable APK & Deploy Website
+  build-apk:
+    name: Build Installable APK
     runs-on: ubuntu-latest
 
     steps:
@@ -54,15 +54,50 @@ jobs:
           path: app/build/outputs/apk/debug/app-debug.apk
           if-no-files-found: error
 
+      - name: Upload Website Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Talha-Mahmood-Website-Docs
+          path: docs/
+          if-no-files-found: warn
+
+  deploy-pages:
+    name: Deploy Website to GitHub Pages
+    needs: build-apk
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Download Built APK
+        uses: actions/download-artifact@v4
+        with:
+          name: Talha-Mahmood-App-APK
+          path: apk_download/
+
+      - name: Prepare Website Folder
+        run: |
+          mkdir -p docs
+          if [ -f apk_download/app-debug.apk ]; then
+            cp apk_download/app-debug.apk docs/Talha-Mahmood-Portfolio.apk
+          fi
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
+        continue-on-error: true
 
       - name: Upload Pages Artifact
         uses: actions/upload-pages-artifact@v3
+        continue-on-error: true
         with:
           path: './docs'
 
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-
+        continue-on-error: true
